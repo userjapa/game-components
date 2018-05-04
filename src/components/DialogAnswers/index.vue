@@ -7,10 +7,10 @@
     <div class="container column">
       <div class="item item-border">
         <div class="container">
-          <div class="item flex-basis-500 item-border">
+          <div class="item flex-basis-500">
             <DialogMedia :exercise="exercise"/>
           </div>
-          <div class="item flex-basis-500 item-border">
+          <div class="item flex-basis-500">
             <div class="container align-items-center question__item" v-for="(qst, index) in exercise.questions" :class="{ disabled: !qst.answered }" :ref="`question-${index}`" @click="viewCurrent(qst)">
               <div class="item">
                 <div class="audio-play">
@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-      <div class="item item-border">
+      <div class="item">
         <div class="container align-items-end justify-content-end">
           <div class="item">
             <div class="container row justify-content-around">

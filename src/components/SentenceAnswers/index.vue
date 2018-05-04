@@ -144,4 +144,9 @@ export default {
         }
     }
 }
+
+.right {
+  color: green;
+  font-weight: bold
+}
 </style>

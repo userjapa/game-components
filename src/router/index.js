@@ -5,6 +5,7 @@ import Create from '../pages/Create'
 import VideoComplete from '../pages/VideoComplete'
 import ListenSelect from '../pages/ListenSelect'
 import CompleteDialog from '../pages/CompleteDialog'
+import ReadSelect from '../pages/ReadSelect'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
               path: `complete-dialog`,
               name: `CompleteDialog`,
               component: CompleteDialog
+            },
+            {
+              path: `read-select`,
+              name: `ReadSelect`,
+              component: ReadSelect
             }
           ]
         }

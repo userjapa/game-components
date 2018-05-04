@@ -1,8 +1,5 @@
 <template>
 <div class="container column">
-  <div class="item">
-    <h2>Create</h2>
-  </div>
   <div class="item item-border">
     <DialogAnswers :exercise="exercise" />
   </div>
