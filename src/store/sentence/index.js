@@ -1,12 +1,14 @@
 export default {
   namespaced: true,
   state: {
-    audios: [],
+    exercise: {
+      audios: []
+    },
     toUpdate: null
   },
   getters: {
-    getAudios ({ audios }) {
-      return audios
+    getExercise ({ exercise }) {
+      return exercise
     },
     isToUpdate({ toUpdate }) {
       if (toUpdate !== null) return true
@@ -15,7 +17,7 @@ export default {
   },
   mutations: {
     addAudio (state, audio) {
-      state.audios.push(audio)
+      state.exercise.audios.push(audio)
     },
     setToUpdate (state, id) {
       state.toUpdate = id

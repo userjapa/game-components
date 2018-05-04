@@ -1,9 +1,13 @@
 <template>
 <div class="item-border">
-
+  <div class="container align-items-center">
+    <div class="item">
+      <h4>{{ exercise.title }}</h4>
+    </div>
+  </div>
   <div class="container align-items-start wrap">
     <div class="flex-basis-300 flex-grow-1 item margin-10 item-border">
-      <div v-for="(ex, index) in audios" :ref="`audio${index}`" :class="{
+      <div v-for="(ex, index) in exercise.audios" :ref="`audio${index}`" :class="{
             disabled: !ex.answered,
             success: (ex.answered && checkAnswer(ex.answers)),
             failed: (ex.answered && !checkAnswer(ex.answers))
@@ -20,7 +24,7 @@
     </div>
   </div>
   <div>
-    <button @click="setCurrent(audios)" v-if="current.answered && !ended" class="btn btn-primary">Next</button>
+    <button @click="setCurrent(exercise.audios)" v-if="current.answered && !ended" class="btn btn-primary">Next</button>
     <p v-if="ended">You've finished!</p>
   </div>
 </div>
@@ -101,7 +105,7 @@ export default {
       else this.oldIndex = this.currentIndex
       this.currentIndex = index
       if (!(this.oldIndex === index)) this.resetBackground()
-      this.current = this.audios[index]
+      this.current = this.exercise.audios[index]
     },
     viewCurrent(audio, index) {
       if (audio.answered && this.audios[this.currentIndex].answered) this.checkCurrent(index)
@@ -113,19 +117,19 @@ export default {
     }
   },
   props: [
-    'audios'
+    'exercise'
   ],
   components: {
     SentenceAudio
   },
   watch: {
-    audios: function () {
+    'exercise.audios': function () {
       this.ended = false
-      this.setCurrent(this.audios)
+      this.setCurrent(this.exercise.audios)
     }
   },
   mounted () {
-    this.setCurrent(this.audios)
+    this.setCurrent(this.exercise.audios)
   }
 }
 </script>

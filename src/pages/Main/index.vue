@@ -3,7 +3,7 @@
     <div class="menu">
     <div class="menu--content size margin container wrap align-items-center justify-content-between">
       <div>
-        <h1> Interactive Video </h1>
+        <h1> Games Components Admin </h1>
       </div>
 
       <div class="container wrap align-center">

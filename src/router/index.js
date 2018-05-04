@@ -4,6 +4,7 @@ import Main from '../pages/Main'
 import Create from '../pages/Create'
 import VideoComplete from '../pages/VideoComplete'
 import ListenSelect from '../pages/ListenSelect'
+import CompleteDialog from '../pages/CompleteDialog'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
               path: `listen-select`,
               name: `ListenSelect`,
               component: ListenSelect
+            },
+            {
+              path: `complete-dialog`,
+              name: `CompleteDialog`,
+              component: CompleteDialog
             }
           ]
         }

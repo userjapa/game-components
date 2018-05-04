@@ -2,12 +2,16 @@
   <div>
     <div>
       <div>
-        <Answers :audios="audios"/>
+        <Answers :exercise="exercise"/>
       </div>
       <div>
         <AudioPlayer :audio="audio" autoplay="true"/>
       </div>
       <div>
+        <div>
+          <label for="exercise_title">Title</label>
+          <input class="input" id="exercise_title" type="text" v-model="exercise.title"/>
+        </div>
         <div>
           <label for="audio_source">Source</label>
           <input class="input" id="audio_source" type="text" v-model="audio.src" @click="audio.src = 'https://vignette.wikia.nocookie.net/leagueoflegends/images/4/4a/Aatrox_Select.ogg/revision/latest?cb=20130520212430'" />
@@ -45,7 +49,7 @@
     </div>
     <div>
       <div class="margin-top-20 margin-bottom-20 item item-border">
-        <div v-for="(ex, index) in audios" class="item item-border item-form">
+        <div v-for="(ex, index) in exercise.audios" class="item item-border item-form">
           <div>
             <strong>Source:</strong> {{ ex.src }}
           </div>
@@ -155,8 +159,8 @@ export default {
     }
   },
   computed: {
-    audios () {
-      return this.$store.getters['sentence/getAudios']
+    exercise () {
+      return this.$store.getters['sentence/getExercise']
     },
     isToUpdate () {
       return this.$store.getters['sentence/isToUpdate']
